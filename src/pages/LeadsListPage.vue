@@ -3,22 +3,26 @@
     <h1>Leads</h1>
 
     <div>
-      Filters here
+      Total: {{ total }}
     </div>
 
     <div>
-      Table here
+      <pre>{{ paginatedLeads }}</pre>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
   import { onMounted } from 'vue'
-  import { useLeadsStore } from '@/stores/useLeadsStore'
+  import { useLeads } from '@/composables/useLeads'
 
-  const store = useLeadsStore()
+  const {
+    loadLeads,
+    paginatedLeads,
+    total,
+  } = useLeads()
 
   onMounted(() => {
-    store.loadLeads()
+    loadLeads()
   })
 </script>
