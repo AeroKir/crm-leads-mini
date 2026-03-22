@@ -18,6 +18,16 @@ export function useLeads () {
     statuses,
   } = storeToRefs(store)
 
+  function resetFilters () {
+    search.value = ''
+
+    filters.value.statuses = []
+    filters.value.owner = ''
+    filters.value.source = ''
+    filters.value.createdFrom = ''
+    filters.value.createdTo = ''
+  }
+
   return {
     // state
     leads,
@@ -38,5 +48,6 @@ export function useLeads () {
     loadLeads: store.loadLeads,
     updateLeadStatus: store.updateLeadStatus,
     addNote: store.addNote,
+    resetFilters,
   }
 }
