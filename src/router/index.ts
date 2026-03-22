@@ -1,21 +1,26 @@
-/**
- * router/index.ts
- *
- * Manual routes for ./src/pages/*.vue
- */
-
-// Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import Index from '@/pages/index.vue'
+
+const routes = [
+  {
+    path: '/',
+    redirect: '/leads',
+  },
+  {
+    path: '/leads',
+    name: 'LeadsList',
+    component: () => import('@/pages/LeadsListPage.vue'),
+  },
+  {
+    path: '/leads/:id',
+    name: 'LeadDetails',
+    component: () => import('@/pages/LeadDetailsPage.vue'),
+    props: true,
+  },
+]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      component: Index,
-    },
-  ],
+  history: createWebHistory(),
+  routes,
 })
 
 export default router
