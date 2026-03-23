@@ -1,4 +1,16 @@
 <template>
+  <v-overlay
+    class="align-center justify-center"
+    :model-value="isLoading"
+    persistent
+  >
+    <div class="text-center">
+      <v-progress-circular indeterminate size="64" />
+      <div class="mt-3 text-body-2">
+        Saving...
+      </div>
+    </div>
+  </v-overlay>
   <div class="pa-4">
     <div class="d-flex align-center justify-space-between mb-4">
       <h1 class="text-h4">
