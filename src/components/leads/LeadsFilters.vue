@@ -80,6 +80,7 @@
     owners,
     sources,
     statuses,
+    pagination,
     resetFilters: resetLeadsFilters,
   } = useLeads()
 
@@ -87,7 +88,10 @@
   const debouncedSearch = useDebounce(localSearch, 300)
 
   watch(debouncedSearch, val => {
+    if (val === search.value) return
+
     search.value = val
+    pagination.value.page = 1
   })
 
   watch(search, val => {
@@ -98,6 +102,7 @@
     get: () => filters.value.createdFrom,
     set: (val: string) => {
       filters.value.createdFrom = val || ''
+      pagination.value.page = 1
     },
   })
 
@@ -105,8 +110,22 @@
     get: () => filters.value.createdTo,
     set: (val: string) => {
       filters.value.createdTo = val || ''
+      pagination.value.page = 1
     },
   })
+
+  watch(
+    () => ({
+      statuses: filters.value.statuses,
+      owner: filters.value.owner,
+      source: filters.value.source,
+    }),
+    (next, prev) => {
+      if (JSON.stringify(next) === JSON.stringify(prev)) return
+      pagination.value.page = 1
+    },
+    { deep: true },
+  )
 
   function resetFilters () {
     localSearch.value = ''
