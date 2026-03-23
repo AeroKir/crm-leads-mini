@@ -1,0 +1,823 @@
+[
+  {
+    "id": "7db0d31c-0558-4158-9988-d6eb05797b7b",
+    "fullName": "John Smith",
+    "phone": "+380642693998",
+    "email": "user0@mail.com",
+    "source": "Facebook",
+    "status": "Lost",
+    "owner": "Charlie",
+    "createdAt": "2026-03-17T07:50:29.794Z",
+    "lastActivityAt": "2026-03-22T18:44:28.619Z",
+    "tags": [
+      "VIP"
+    ]
+  },
+  {
+    "id": "638d0878-716f-4b08-a57e-58305b72a62f",
+    "fullName": "Anna Bush",
+    "phone": "+380687983653",
+    "source": "Other",
+    "status": "Qualified",
+    "owner": "Bob",
+    "createdAt": "2026-02-17T02:08:22.680Z",
+    "lastActivityAt": "2026-02-25T21:54:20.496Z",
+    "tags": []
+  },
+  {
+    "id": "2cb17885-6411-4ffa-9114-fd561ab57ef0",
+    "fullName": "Maria Brown",
+    "phone": "+380903032333",
+    "email": "user2@mail.com",
+    "source": "Facebook",
+    "status": "InProgress",
+    "owner": "Alice",
+    "createdAt": "2026-01-22T18:56:10.026Z",
+    "lastActivityAt": "2026-01-28T07:27:03.447Z",
+    "budget": 754,
+    "tags": [
+      "VIP"
+    ]
+  },
+  {
+    "id": "2002a948-2f39-4600-a336-d1a86b8928ef",
+    "fullName": "Kate Smith",
+    "phone": "+380204338314",
+    "email": "user3@mail.com",
+    "source": "Referral",
+    "status": "Qualified",
+    "owner": "Charlie",
+    "createdAt": "2026-03-15T16:58:58.061Z",
+    "lastActivityAt": "2026-03-24T18:20:48.607Z",
+    "tags": []
+  },
+  {
+    "id": "420cb1ee-45cc-4b3e-b390-00056c508f8e",
+    "fullName": "John Bush",
+    "phone": "+380420083244",
+    "email": "user4@mail.com",
+    "source": "Referral",
+    "status": "Won",
+    "owner": "Charlie",
+    "createdAt": "2026-02-05T06:45:42.840Z",
+    "lastActivityAt": "2026-02-05T12:55:05.671Z",
+    "tags": [
+      "Hot"
+    ]
+  },
+  {
+    "id": "1200f1d9-b33d-4e8c-8ef0-c257d0fde238",
+    "fullName": "Kate Bush",
+    "phone": "+380409571821",
+    "email": "user5@mail.com",
+    "source": "Google",
+    "status": "Lost",
+    "owner": "Alice",
+    "createdAt": "2026-03-10T08:58:01.503Z",
+    "lastActivityAt": "2026-03-15T02:53:02.427Z",
+    "tags": []
+  },
+  {
+    "id": "29871fd8-a7a9-499f-9be6-2b627d3880ed",
+    "fullName": "Kate Shevchenko",
+    "phone": "+380772880574",
+    "email": "user6@mail.com",
+    "source": "Referral",
+    "status": "Won",
+    "owner": "Alice",
+    "createdAt": "2026-02-01T16:34:42.933Z",
+    "lastActivityAt": "2026-02-08T18:29:52.430Z",
+    "budget": 3464,
+    "tags": [
+      "Returning",
+      "Returning"
+    ]
+  },
+  {
+    "id": "89e11bb1-6875-4640-aa0c-8e8b8143ddfd",
+    "fullName": "Maria Snow",
+    "phone": "+380465130455",
+    "email": "user7@mail.com",
+    "source": "Referral",
+    "status": "New",
+    "owner": "Alice",
+    "createdAt": "2026-03-01T18:35:03.313Z",
+    "lastActivityAt": "2026-03-10T19:38:47.407Z",
+    "tags": [
+      "VIP",
+      "Hot"
+    ]
+  },
+  {
+    "id": "651ceacc-49b6-4418-b579-392c174c1c5f",
+    "fullName": "Maria Bush",
+    "phone": "+380818461687",
+    "source": "Organic",
+    "status": "Won",
+    "owner": "Diana",
+    "createdAt": "2026-02-25T14:26:12.050Z",
+    "lastActivityAt": "2026-03-01T03:53:22.501Z",
+    "budget": 3269,
+    "tags": [
+      "Priority"
+    ]
+  },
+  {
+    "id": "e8298e39-077a-4c5c-9c2d-be459a25902f",
+    "fullName": "Maria Bush",
+    "phone": "+380704657470",
+    "email": "user9@mail.com",
+    "source": "Google",
+    "status": "New",
+    "owner": "Diana",
+    "createdAt": "2026-03-06T02:22:01.066Z",
+    "lastActivityAt": "2026-03-09T05:30:35.627Z",
+    "tags": [
+      "Cold",
+      "Returning"
+    ]
+  },
+  {
+    "id": "cb5e3adf-489f-488c-a75c-7afe04ca9b6b",
+    "fullName": "Maria Bush",
+    "phone": "+380698613926",
+    "email": "user10@mail.com",
+    "source": "Facebook",
+    "status": "InProgress",
+    "owner": "Charlie",
+    "createdAt": "2026-02-25T20:50:35.014Z",
+    "lastActivityAt": "2026-03-04T14:47:56.911Z",
+    "budget": 985,
+    "tags": []
+  },
+  {
+    "id": "f242fb1c-a3fc-4408-b3de-b8064357f197",
+    "fullName": "Maria Snow",
+    "phone": "+380583923310",
+    "email": "user11@mail.com",
+    "source": "Other",
+    "status": "New",
+    "owner": "Alice",
+    "createdAt": "2026-02-13T08:36:55.828Z",
+    "lastActivityAt": "2026-02-13T14:06:26.755Z",
+    "tags": []
+  },
+  {
+    "id": "cdeb89f2-b9b8-4dab-ab69-58c470584782",
+    "fullName": "John Brown",
+    "phone": "+380544542517",
+    "email": "user12@mail.com",
+    "source": "Organic",
+    "status": "InProgress",
+    "owner": "Bob",
+    "createdAt": "2026-03-11T01:35:34.287Z",
+    "lastActivityAt": "2026-03-15T08:45:21.416Z",
+    "tags": [
+      "Priority"
+    ]
+  },
+  {
+    "id": "deb0ccec-bd5c-4fe9-8b30-ecfe3ba50899",
+    "fullName": "Kate Bush",
+    "phone": "+380939864676",
+    "email": "user13@mail.com",
+    "source": "Referral",
+    "status": "InProgress",
+    "owner": "Charlie",
+    "createdAt": "2026-03-16T10:54:07.464Z",
+    "lastActivityAt": "2026-03-25T19:21:03.852Z",
+    "budget": 1344,
+    "tags": [
+      "Cold",
+      "Cold"
+    ]
+  },
+  {
+    "id": "0d44cea9-2a0a-4ecd-aa66-180b5bde8760",
+    "fullName": "George Smith",
+    "phone": "+380119635416",
+    "source": "Facebook",
+    "status": "Qualified",
+    "owner": "Charlie",
+    "createdAt": "2026-02-28T20:34:23.937Z",
+    "lastActivityAt": "2026-03-10T06:37:06.323Z",
+    "budget": 327,
+    "tags": [
+      "Priority"
+    ]
+  },
+  {
+    "id": "103b1d3f-8e35-4926-81fa-2bed4efeb3d4",
+    "fullName": "Anna Shevchenko",
+    "phone": "+380469303039",
+    "email": "user15@mail.com",
+    "source": "Other",
+    "status": "InProgress",
+    "owner": "Alice",
+    "createdAt": "2026-01-22T10:08:55.145Z",
+    "lastActivityAt": "2026-01-24T22:05:26.584Z",
+    "budget": 4786,
+    "tags": [
+      "VIP"
+    ]
+  },
+  {
+    "id": "dae980b3-d824-4aed-b108-f415a4c25876",
+    "fullName": "Kate Smith",
+    "phone": "+380167347329",
+    "email": "user16@mail.com",
+    "source": "Referral",
+    "status": "InProgress",
+    "owner": "Diana",
+    "createdAt": "2026-03-18T18:30:49.063Z",
+    "lastActivityAt": "2026-03-20T01:21:23.167Z",
+    "budget": 4292,
+    "tags": []
+  },
+  {
+    "id": "82cd89e0-848a-461c-a61c-e810476b10dc",
+    "fullName": "John Bush",
+    "phone": "+380524181725",
+    "email": "user17@mail.com",
+    "source": "Referral",
+    "status": "Lost",
+    "owner": "Diana",
+    "createdAt": "2026-03-06T13:25:12.040Z",
+    "lastActivityAt": "2026-03-09T19:02:39.941Z",
+    "budget": 4575,
+    "tags": []
+  },
+  {
+    "id": "b172314b-2664-462d-b350-f720da168269",
+    "fullName": "John Brown",
+    "phone": "+380445223321",
+    "email": "user18@mail.com",
+    "source": "Referral",
+    "status": "Qualified",
+    "owner": "Alice",
+    "createdAt": "2026-02-21T03:03:16.283Z",
+    "lastActivityAt": "2026-02-26T15:58:32.407Z",
+    "tags": [
+      "Hot"
+    ]
+  },
+  {
+    "id": "ef90b024-479a-4e45-9d56-76dd1f3d2c42",
+    "fullName": "John Snow",
+    "phone": "+380281706944",
+    "email": "user19@mail.com",
+    "source": "Organic",
+    "status": "Won",
+    "owner": "Alice",
+    "createdAt": "2026-03-18T12:36:59.334Z",
+    "lastActivityAt": "2026-03-20T16:52:38.941Z",
+    "budget": 328,
+    "tags": [
+      "Hot"
+    ]
+  },
+  {
+    "id": "bc29269a-445a-40c5-8ee6-99acd78a9396",
+    "fullName": "Kate Smith",
+    "phone": "+380691064760",
+    "email": "user20@mail.com",
+    "source": "Referral",
+    "status": "Lost",
+    "owner": "Charlie",
+    "createdAt": "2026-01-27T23:04:28.301Z",
+    "lastActivityAt": "2026-02-03T06:49:34.502Z",
+    "tags": [
+      "Cold",
+      "Hot"
+    ]
+  },
+  {
+    "id": "2aae3a40-6545-4b14-a9e1-05624b6ab0af",
+    "fullName": "George Smith",
+    "phone": "+380339930689",
+    "source": "Organic",
+    "status": "Won",
+    "owner": "Alice",
+    "createdAt": "2026-01-25T03:49:27.538Z",
+    "lastActivityAt": "2026-01-29T12:34:29.591Z",
+    "tags": [
+      "Cold"
+    ]
+  },
+  {
+    "id": "4326a1a0-6802-47d7-bc7e-1924b955d850",
+    "fullName": "Kate Brown",
+    "phone": "+380583541981",
+    "email": "user22@mail.com",
+    "source": "Referral",
+    "status": "Qualified",
+    "owner": "Alice",
+    "createdAt": "2026-02-05T18:59:29.903Z",
+    "lastActivityAt": "2026-02-06T18:59:47.209Z",
+    "tags": [
+      "Priority",
+      "Returning"
+    ]
+  },
+  {
+    "id": "8cd9d253-d583-402d-8178-7346d53f655f",
+    "fullName": "Kate Bush",
+    "phone": "+380526357576",
+    "source": "Referral",
+    "status": "Won",
+    "owner": "Alice",
+    "createdAt": "2026-02-08T06:48:11.987Z",
+    "lastActivityAt": "2026-02-17T20:20:05.639Z",
+    "budget": 1818,
+    "tags": [
+      "VIP"
+    ]
+  },
+  {
+    "id": "edaba895-ebe1-45db-8595-64335fda007d",
+    "fullName": "Maria Bush",
+    "phone": "+380340557445",
+    "email": "user24@mail.com",
+    "source": "Google",
+    "status": "Won",
+    "owner": "Diana",
+    "createdAt": "2026-01-30T22:56:16.596Z",
+    "lastActivityAt": "2026-02-05T14:43:20.906Z",
+    "tags": [
+      "Priority"
+    ]
+  },
+  {
+    "id": "6daf15f2-4d24-4df6-90ca-d1f1cd972b08",
+    "fullName": "Anna Bush",
+    "phone": "+380763515415",
+    "email": "user25@mail.com",
+    "source": "Google",
+    "status": "New",
+    "owner": "Charlie",
+    "createdAt": "2026-02-16T01:05:26.046Z",
+    "lastActivityAt": "2026-02-22T05:02:06.745Z",
+    "budget": 987,
+    "tags": [
+      "VIP"
+    ]
+  },
+  {
+    "id": "73e58872-718e-49fd-9301-67ca5c3640c1",
+    "fullName": "Maria Snow",
+    "phone": "+380671376721",
+    "source": "Google",
+    "status": "New",
+    "owner": "Alice",
+    "createdAt": "2026-02-20T12:18:04.820Z",
+    "lastActivityAt": "2026-02-25T19:53:42.879Z",
+    "budget": 1476,
+    "tags": []
+  },
+  {
+    "id": "b7ca0f36-fdca-4306-b673-fece75780485",
+    "fullName": "Anna Snow",
+    "phone": "+380145515394",
+    "email": "user27@mail.com",
+    "source": "Organic",
+    "status": "Lost",
+    "owner": "Diana",
+    "createdAt": "2026-03-21T12:21:44.230Z",
+    "lastActivityAt": "2026-03-31T02:41:31.611Z",
+    "budget": 1005,
+    "tags": []
+  },
+  {
+    "id": "12e81316-64b3-4d8a-86f0-261d8e2a62f2",
+    "fullName": "Kate Shevchenko",
+    "phone": "+380387596790",
+    "email": "user28@mail.com",
+    "source": "Other",
+    "status": "Qualified",
+    "owner": "Diana",
+    "createdAt": "2026-03-22T02:44:08.525Z",
+    "lastActivityAt": "2026-03-22T20:13:02.588Z",
+    "budget": 3623,
+    "tags": [
+      "Priority",
+      "Cold"
+    ]
+  },
+  {
+    "id": "04bcdc46-26a1-40a7-a26d-1e846469e316",
+    "fullName": "Anna Smith",
+    "phone": "+380557915231",
+    "email": "user29@mail.com",
+    "source": "Referral",
+    "status": "Won",
+    "owner": "Alice",
+    "createdAt": "2026-02-24T23:18:10.857Z",
+    "lastActivityAt": "2026-02-28T18:39:06.388Z",
+    "budget": 4187,
+    "tags": []
+  },
+  {
+    "id": "57dcb99e-d1da-4653-8554-de16ddef2650",
+    "fullName": "George Bush",
+    "phone": "+380787483958",
+    "email": "user30@mail.com",
+    "source": "Organic",
+    "status": "New",
+    "owner": "Alice",
+    "createdAt": "2026-03-01T01:31:05.179Z",
+    "lastActivityAt": "2026-03-10T18:59:59.820Z",
+    "tags": [
+      "Returning"
+    ]
+  },
+  {
+    "id": "6e4c6f89-c451-419f-a6bd-1b20f6adc406",
+    "fullName": "Kate Snow",
+    "phone": "+380604218307",
+    "email": "user31@mail.com",
+    "source": "Other",
+    "status": "Qualified",
+    "owner": "Diana",
+    "createdAt": "2026-01-31T01:48:32.771Z",
+    "lastActivityAt": "2026-02-03T05:45:53.088Z",
+    "budget": 3021,
+    "tags": []
+  },
+  {
+    "id": "5c0469f4-76bb-4013-b600-a45f22f1a97a",
+    "fullName": "John Brown",
+    "phone": "+380942843426",
+    "email": "user32@mail.com",
+    "source": "Referral",
+    "status": "Qualified",
+    "owner": "Bob",
+    "createdAt": "2026-03-11T17:47:25.805Z",
+    "lastActivityAt": "2026-03-15T05:17:26.079Z",
+    "tags": [
+      "Returning"
+    ]
+  },
+  {
+    "id": "ad157495-6ba7-4ba5-b820-003dac2a5d8f",
+    "fullName": "Anna Shevchenko",
+    "phone": "+380168877273",
+    "source": "Google",
+    "status": "InProgress",
+    "owner": "Diana",
+    "createdAt": "2026-01-23T10:56:31.470Z",
+    "lastActivityAt": "2026-01-24T03:58:28.502Z",
+    "budget": 1003,
+    "tags": []
+  },
+  {
+    "id": "48cb1734-b7d3-4979-afc3-81f1fcd21efd",
+    "fullName": "Kate Smith",
+    "phone": "+380388581524",
+    "source": "Other",
+    "status": "InProgress",
+    "owner": "Alice",
+    "createdAt": "2026-03-14T01:04:07.298Z",
+    "lastActivityAt": "2026-03-20T15:30:55.332Z",
+    "tags": [
+      "Returning",
+      "Priority"
+    ]
+  },
+  {
+    "id": "745a1359-51c0-4623-a801-2028e3ca852c",
+    "fullName": "George Brown",
+    "phone": "+380300356507",
+    "email": "user35@mail.com",
+    "source": "Google",
+    "status": "InProgress",
+    "owner": "Bob",
+    "createdAt": "2026-01-30T07:55:19.129Z",
+    "lastActivityAt": "2026-02-06T01:14:36.878Z",
+    "budget": 4146,
+    "tags": []
+  },
+  {
+    "id": "2ed1f3fc-7f89-4659-b586-9d8f88294edc",
+    "fullName": "Anna Shevchenko",
+    "phone": "+380560498513",
+    "email": "user36@mail.com",
+    "source": "Organic",
+    "status": "Won",
+    "owner": "Charlie",
+    "createdAt": "2026-02-23T00:48:11.261Z",
+    "lastActivityAt": "2026-03-03T04:19:27.009Z",
+    "tags": [
+      "Priority",
+      "Cold"
+    ]
+  },
+  {
+    "id": "b5af0f9e-40f8-4fe0-bcb4-529520c4d81a",
+    "fullName": "Anna Smith",
+    "phone": "+380175484566",
+    "email": "user37@mail.com",
+    "source": "Other",
+    "status": "New",
+    "owner": "Bob",
+    "createdAt": "2026-02-03T18:49:04.009Z",
+    "lastActivityAt": "2026-02-04T17:47:24.142Z",
+    "tags": []
+  },
+  {
+    "id": "2a35fa30-b7ae-4a00-b852-f535e49217ea",
+    "fullName": "George Shevchenko",
+    "phone": "+380855426159",
+    "email": "user38@mail.com",
+    "source": "Facebook",
+    "status": "Won",
+    "owner": "Alice",
+    "createdAt": "2026-02-23T17:58:23.319Z",
+    "lastActivityAt": "2026-02-26T05:30:26.467Z",
+    "tags": [
+      "Hot",
+      "Priority"
+    ]
+  },
+  {
+    "id": "e6055cbc-3f26-40a2-8ea8-55d2c13057bc",
+    "fullName": "Maria Shevchenko",
+    "phone": "+380476153861",
+    "source": "Other",
+    "status": "Qualified",
+    "owner": "Alice",
+    "createdAt": "2026-01-27T18:40:45.969Z",
+    "lastActivityAt": "2026-01-30T16:04:35.928Z",
+    "tags": []
+  },
+  {
+    "id": "8f0c98b5-3f0f-4a9f-b4b2-644c3f1ed383",
+    "fullName": "Kate Smith",
+    "phone": "+380549204787",
+    "email": "user40@mail.com",
+    "source": "Organic",
+    "status": "New",
+    "owner": "Diana",
+    "createdAt": "2026-02-12T08:46:42.843Z",
+    "lastActivityAt": "2026-02-22T08:17:26.591Z",
+    "budget": 118,
+    "tags": []
+  },
+  {
+    "id": "525456d4-560c-4ed2-9d7a-7459bda6b032",
+    "fullName": "Anna Bush",
+    "phone": "+380244338614",
+    "email": "user41@mail.com",
+    "source": "Organic",
+    "status": "New",
+    "owner": "Diana",
+    "createdAt": "2026-02-01T05:10:06.526Z",
+    "lastActivityAt": "2026-02-02T13:49:41.699Z",
+    "tags": [
+      "Cold"
+    ]
+  },
+  {
+    "id": "7563fcee-aefc-4826-9ec3-b9101b9500d4",
+    "fullName": "George Shevchenko",
+    "phone": "+380681532467",
+    "email": "user42@mail.com",
+    "source": "Organic",
+    "status": "Lost",
+    "owner": "Bob",
+    "createdAt": "2026-02-21T09:51:30.099Z",
+    "lastActivityAt": "2026-03-03T00:50:24.457Z",
+    "tags": [
+      "Returning"
+    ]
+  },
+  {
+    "id": "7f03ad82-608d-4719-85cf-17b24ed72553",
+    "fullName": "John Brown",
+    "phone": "+380512423918",
+    "source": "Facebook",
+    "status": "Qualified",
+    "owner": "Alice",
+    "createdAt": "2026-02-10T06:06:24.105Z",
+    "lastActivityAt": "2026-02-13T15:15:27.725Z",
+    "budget": 1393,
+    "tags": []
+  },
+  {
+    "id": "3350a52b-8db0-4c17-87c7-643ef893a18b",
+    "fullName": "Maria Smith",
+    "phone": "+380608207737",
+    "email": "user44@mail.com",
+    "source": "Organic",
+    "status": "New",
+    "owner": "Diana",
+    "createdAt": "2026-02-27T09:30:35.067Z",
+    "lastActivityAt": "2026-02-28T02:06:48.567Z",
+    "tags": []
+  },
+  {
+    "id": "6cf33d01-2f1f-4d77-b698-8e4a8e455605",
+    "fullName": "Donald Brown",
+    "phone": "+380405495252",
+    "source": "Referral",
+    "status": "InProgress",
+    "owner": "Diana",
+    "createdAt": "2026-03-13T19:37:09.564Z",
+    "lastActivityAt": "2026-03-20T14:09:23.264Z",
+    "tags": [
+      "Returning",
+      "VIP"
+    ]
+  },
+  {
+    "id": "0fc779e4-f53d-4a4d-b130-2389b8c74803",
+    "fullName": "John Snow",
+    "phone": "+380111938222",
+    "email": "user46@mail.com",
+    "source": "Other",
+    "status": "Lost",
+    "owner": "Bob",
+    "createdAt": "2026-01-26T03:31:57.234Z",
+    "lastActivityAt": "2026-02-04T08:37:39.824Z",
+    "budget": 4881,
+    "tags": [
+      "Returning"
+    ]
+  },
+  {
+    "id": "03f8d62f-0599-476b-a0d6-9d200d6483dd",
+    "fullName": "George Brown",
+    "phone": "+380597138884",
+    "email": "user47@mail.com",
+    "source": "Organic",
+    "status": "New",
+    "owner": "Diana",
+    "createdAt": "2026-02-23T05:38:18.107Z",
+    "lastActivityAt": "2026-02-25T02:20:15.088Z",
+    "tags": [
+      "Cold"
+    ]
+  },
+  {
+    "id": "3fb59d09-cafc-4293-9cff-bb2ed7e99811",
+    "fullName": "Donald Snow",
+    "phone": "+380311632704",
+    "source": "Referral",
+    "status": "New",
+    "owner": "Alice",
+    "createdAt": "2026-01-31T12:35:01.157Z",
+    "lastActivityAt": "2026-02-01T09:07:23.334Z",
+    "budget": 3563,
+    "tags": [
+      "Cold"
+    ]
+  },
+  {
+    "id": "6c997dbc-4d72-4ab8-946a-5a8e6483fefa",
+    "fullName": "Maria Snow",
+    "phone": "+380196605193",
+    "source": "Facebook",
+    "status": "Qualified",
+    "owner": "Bob",
+    "createdAt": "2026-01-26T04:10:14.453Z",
+    "lastActivityAt": "2026-01-27T10:23:53.418Z",
+    "tags": []
+  },
+  {
+    "id": "dc5fbff0-b47a-460f-80ed-700ba19ecfc0",
+    "fullName": "John Brown",
+    "phone": "+380641615572",
+    "source": "Google",
+    "status": "New",
+    "owner": "Alice",
+    "createdAt": "2026-03-09T21:26:03.592Z",
+    "lastActivityAt": "2026-03-10T07:56:39.394Z",
+    "budget": 240,
+    "tags": [
+      "Returning"
+    ]
+  },
+  {
+    "id": "0c1f1640-7d63-4440-bfff-2f01cb7ff123",
+    "fullName": "Kate Snow",
+    "phone": "+380704985555",
+    "email": "user51@mail.com",
+    "source": "Facebook",
+    "status": "New",
+    "owner": "Bob",
+    "createdAt": "2026-03-22T13:43:20.768Z",
+    "lastActivityAt": "2026-03-29T13:47:34.022Z",
+    "tags": []
+  },
+  {
+    "id": "7d3e6c99-c616-4bd4-8979-0cca51579626",
+    "fullName": "George Snow",
+    "phone": "+380866308575",
+    "email": "user52@mail.com",
+    "source": "Referral",
+    "status": "Qualified",
+    "owner": "Alice",
+    "createdAt": "2026-02-12T13:37:28.519Z",
+    "lastActivityAt": "2026-02-21T09:11:42.489Z",
+    "budget": 1124,
+    "tags": []
+  },
+  {
+    "id": "39727b77-02c1-4432-9a3e-1e6ad700b8bb",
+    "fullName": "Donald Bush",
+    "phone": "+380991632842",
+    "email": "user53@mail.com",
+    "source": "Organic",
+    "status": "Won",
+    "owner": "Alice",
+    "createdAt": "2026-02-10T16:41:19.089Z",
+    "lastActivityAt": "2026-02-11T03:57:05.189Z",
+    "budget": 2335,
+    "tags": []
+  },
+  {
+    "id": "ff9d9df4-3863-4163-b1ce-8842b9389eb1",
+    "fullName": "John Brown",
+    "phone": "+380616104802",
+    "email": "user54@mail.com",
+    "source": "Facebook",
+    "status": "New",
+    "owner": "Bob",
+    "createdAt": "2026-02-24T21:28:12.762Z",
+    "lastActivityAt": "2026-03-06T21:18:34.909Z",
+    "budget": 1309,
+    "tags": [
+      "Hot",
+      "Hot"
+    ]
+  },
+  {
+    "id": "666a1c21-d9fa-4c66-b54a-9c89a411443f",
+    "fullName": "John Bush",
+    "phone": "+380734954367",
+    "source": "Referral",
+    "status": "Lost",
+    "owner": "Alice",
+    "createdAt": "2026-03-19T10:49:48.774Z",
+    "lastActivityAt": "2026-03-28T09:34:35.727Z",
+    "tags": []
+  },
+  {
+    "id": "ce458e29-e775-4ed3-a5c5-e08d06107b02",
+    "fullName": "Donald Snow",
+    "phone": "+380665135576",
+    "email": "user56@mail.com",
+    "source": "Referral",
+    "status": "New",
+    "owner": "Diana",
+    "createdAt": "2026-02-08T11:12:00.403Z",
+    "lastActivityAt": "2026-02-11T07:58:45.992Z",
+    "budget": 1035,
+    "tags": [
+      "Returning",
+      "Priority"
+    ]
+  },
+  {
+    "id": "85e7c862-be23-4cf6-a8a2-2cc3ef89e8dd",
+    "fullName": "Maria Brown",
+    "phone": "+380231551105",
+    "email": "user57@mail.com",
+    "source": "Google",
+    "status": "Lost",
+    "owner": "Diana",
+    "createdAt": "2026-02-02T08:11:02.553Z",
+    "lastActivityAt": "2026-02-10T10:51:34.979Z",
+    "budget": 2966,
+    "tags": [
+      "VIP",
+      "Cold"
+    ]
+  },
+  {
+    "id": "b0948eab-d329-4a65-9a33-4f21015d5550",
+    "fullName": "Maria Smith",
+    "phone": "+380996039561",
+    "email": "user58@mail.com",
+    "source": "Other",
+    "status": "Won",
+    "owner": "Bob",
+    "createdAt": "2026-02-19T01:29:28.312Z",
+    "lastActivityAt": "2026-02-26T02:59:10.585Z",
+    "budget": 1102,
+    "tags": []
+  },
+  {
+    "id": "c289782f-a090-4f5c-a52b-a3149d692a2d",
+    "fullName": "John Smith",
+    "phone": "+380580688586",
+    "source": "Google",
+    "status": "New",
+    "owner": "Charlie",
+    "createdAt": "2026-01-30T20:31:28.582Z",
+    "lastActivityAt": "2026-02-08T11:09:07.323Z",
+    "budget": 371,
+    "tags": [
+      "Returning"
+    ]
+  }
+]
