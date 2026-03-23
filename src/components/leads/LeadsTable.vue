@@ -74,7 +74,7 @@
       </template>
 
       <template #item.lastActivityAt="{ item }">
-        {{ formatDate(item.lastActivityAt) }}
+        {{ formatDateTime(item.lastActivityAt) }}
       </template>
 
       <template #item.createdAt="{ item }">
@@ -133,6 +133,8 @@
   const itemsPerPage = computed({
     get: () => pagination.value.perPage,
     set: (value: number) => {
+      if (value === pagination.value.perPage) return
+
       pagination.value.perPage = value
       pagination.value.page = 1
     },
@@ -149,13 +151,29 @@
       const first = value[0]
 
       if (!first) {
+        const isAlreadyDefault
+          = sort.value.key === 'lastActivityAt'
+            && sort.value.order === 'desc'
+
+        if (isAlreadyDefault) return
+
         sort.value.key = 'lastActivityAt'
         sort.value.order = 'desc'
+        pagination.value.page = 1
         return
       }
 
-      sort.value.key = first.key
-      sort.value.order = first.order || 'asc'
+      const nextKey = first.key
+      const nextOrder = first.order || 'asc'
+
+      const didSortChange
+        = sort.value.key !== nextKey
+          || sort.value.order !== nextOrder
+
+      if (!didSortChange) return
+
+      sort.value.key = nextKey
+      sort.value.order = nextOrder
       pagination.value.page = 1
     },
   })
@@ -200,6 +218,18 @@
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
+    }).format(new Date(value))
+  }
+
+  function formatDateTime (value?: string) {
+    if (!value) return '—'
+
+    return new Intl.DateTimeFormat('uk-UA', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
     }).format(new Date(value))
   }
 
