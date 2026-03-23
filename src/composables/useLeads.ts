@@ -16,6 +16,7 @@ export function useLeads () {
     owners,
     sources,
     statuses,
+    notesByLeadId,
   } = storeToRefs(store)
 
   function resetFilters () {
@@ -26,6 +27,8 @@ export function useLeads () {
     filters.value.source = ''
     filters.value.createdFrom = ''
     filters.value.createdTo = ''
+
+    pagination.value.page = 1
   }
 
   return {
@@ -43,12 +46,15 @@ export function useLeads () {
     owners,
     sources,
     statuses,
+    notesByLeadId,
 
     // actions
     loadLeads: store.loadLeads,
+    getLeadById: store.getLeadById,
+    getLeadNotes: store.getLeadNotes,
     updateLeadStatus: store.updateLeadStatus,
-    addNote: store.addNote,
     updateManyLeadsStatus: store.updateManyLeadsStatus,
+    addNote: store.addNote,
     resetFilters,
   }
 }

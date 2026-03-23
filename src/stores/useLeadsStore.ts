@@ -2,6 +2,31 @@ import type { Lead, LeadNote, LeadStatus } from '@/types/lead'
 import { defineStore } from 'pinia'
 import leadsData from '@/data/leads.json'
 
+function compareValues (aValue: unknown, bValue: unknown, order: 1 | -1) {
+  if (aValue == null && bValue == null) {
+    return 0
+  }
+  if (aValue == null) {
+    return 1
+  }
+  if (bValue == null) {
+    return -1
+  }
+
+  if (typeof aValue === 'string' && typeof bValue === 'string') {
+    return aValue.localeCompare(bValue) * order
+  }
+
+  if (aValue > bValue) {
+    return 1 * order
+  }
+  if (aValue < bValue) {
+    return -1 * order
+  }
+
+  return 0
+}
+
 export const useLeadsStore = defineStore('leads', {
   state: () => ({
     leads: [] as Lead[],
@@ -62,28 +87,7 @@ export const useLeadsStore = defineStore('leads', {
         const key = state.sort.key as keyof Lead
         const order = state.sort.order === 'asc' ? 1 : -1
 
-        const aValue = a[key]
-        const bValue = b[key]
-
-        if (aValue == null && bValue == null) {
-          return 0
-        }
-        if (aValue == null) {
-          return -1 * order
-        }
-        if (bValue == null) {
-          return 1 * order
-        }
-
-        if (key === 'createdAt' || key === 'lastActivityAt') {
-          return (new Date(aValue as string).getTime() - new Date(bValue as string).getTime()) * order
-        }
-
-        if (typeof aValue === 'number' && typeof bValue === 'number') {
-          return (aValue - bValue) * order
-        }
-
-        return String(aValue).localeCompare(String(bValue)) * order
+        return compareValues(a[key], b[key], order)
       })
 
       return result
@@ -111,7 +115,16 @@ export const useLeadsStore = defineStore('leads', {
       if (this.leads.length > 0) {
         return
       }
+
       this.leads = leadsData as Lead[]
+    },
+
+    getLeadById (id: string) {
+      return this.leads.find(lead => lead.id === id) || null
+    },
+
+    getLeadNotes (id: string) {
+      return this.notesByLeadId[id] || []
     },
 
     async updateLeadStatus (id: string, status: LeadStatus) {
@@ -122,25 +135,6 @@ export const useLeadsStore = defineStore('leads', {
       const lead = this.leads.find(l => l.id === id)
       if (lead) {
         lead.status = status
-        lead.lastActivityAt = new Date().toISOString()
-      }
-
-      this.isLoading = false
-    },
-
-    async addNote (id: string, note: LeadNote) {
-      this.isLoading = true
-
-      await new Promise(r => setTimeout(r, 500))
-
-      if (!this.notesByLeadId[id]) {
-        this.notesByLeadId[id] = []
-      }
-
-      this.notesByLeadId[id].push(note)
-
-      const lead = this.leads.find(l => l.id === id)
-      if (lead) {
         lead.lastActivityAt = new Date().toISOString()
       }
 
@@ -165,6 +159,25 @@ export const useLeadsStore = defineStore('leads', {
           lastActivityAt: now,
         }
       })
+
+      this.isLoading = false
+    },
+
+    async addNote (id: string, note: LeadNote) {
+      this.isLoading = true
+
+      await new Promise(r => setTimeout(r, 500))
+
+      if (!this.notesByLeadId[id]) {
+        this.notesByLeadId[id] = []
+      }
+
+      this.notesByLeadId[id].unshift(note)
+
+      const lead = this.leads.find(l => l.id === id)
+      if (lead) {
+        lead.lastActivityAt = note.createdAt
+      }
 
       this.isLoading = false
     },
