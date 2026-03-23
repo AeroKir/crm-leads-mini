@@ -29,7 +29,6 @@ export const useLeadsStore = defineStore('leads', {
     filteredLeads (state): Lead[] {
       let result = [...state.leads]
 
-      // 1. Search
       if (state.search) {
         const q = state.search.toLowerCase()
         result = result.filter(l =>
@@ -39,7 +38,6 @@ export const useLeadsStore = defineStore('leads', {
         )
       }
 
-      // 2. Filters
       if (state.filters.statuses.length > 0) {
         result = result.filter(l => state.filters.statuses.includes(l.status))
       }
@@ -60,24 +58,35 @@ export const useLeadsStore = defineStore('leads', {
         result = result.filter(l => l.createdAt <= state.filters.createdTo)
       }
 
-      // 3. Sort
       result.sort((a, b) => {
         const key = state.sort.key as keyof Lead
         const order = state.sort.order === 'asc' ? 1 : -1
 
-        return a[key] > b[key] ? order : -order
+        const aValue = a[key]
+        const bValue = b[key]
+
+        if (aValue == null && bValue == null) {
+          return 0
+        }
+        if (aValue == null) {
+          return -1 * order
+        }
+        if (bValue == null) {
+          return 1 * order
+        }
+
+        if (key === 'createdAt' || key === 'lastActivityAt') {
+          return (new Date(aValue as string).getTime() - new Date(bValue as string).getTime()) * order
+        }
+
+        if (typeof aValue === 'number' && typeof bValue === 'number') {
+          return (aValue - bValue) * order
+        }
+
+        return String(aValue).localeCompare(String(bValue)) * order
       })
 
       return result
-    },
-
-    paginatedLeads (): Lead[] {
-      if (!this.pagination) {
-        return []
-      }
-
-      const start = (this.pagination.page - 1) * this.pagination.perPage
-      return this.filteredLeads.slice(start, start + this.pagination.perPage)
     },
 
     total (): number {
@@ -99,6 +108,9 @@ export const useLeadsStore = defineStore('leads', {
 
   actions: {
     loadLeads () {
+      if (this.leads.length > 0) {
+        return
+      }
       this.leads = leadsData as Lead[]
     },
 
