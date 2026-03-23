@@ -11,7 +11,7 @@ export function useLeads () {
     sort,
     pagination,
     isLoading,
-    paginatedLeads,
+    filteredLeads,
     total,
     owners,
     sources,
@@ -38,7 +38,7 @@ export function useLeads () {
     isLoading,
 
     // derived
-    paginatedLeads,
+    filteredLeads,
     total,
     owners,
     sources,
