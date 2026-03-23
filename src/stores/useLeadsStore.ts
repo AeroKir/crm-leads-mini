@@ -146,5 +146,27 @@ export const useLeadsStore = defineStore('leads', {
 
       this.isLoading = false
     },
+
+    async updateManyLeadsStatus (ids: string[], status: LeadStatus) {
+      this.isLoading = true
+
+      await new Promise(r => setTimeout(r, 500))
+
+      const now = new Date().toISOString()
+
+      this.leads = this.leads.map(lead => {
+        if (!ids.includes(lead.id)) {
+          return lead
+        }
+
+        return {
+          ...lead,
+          status,
+          lastActivityAt: now,
+        }
+      })
+
+      this.isLoading = false
+    },
   },
 })

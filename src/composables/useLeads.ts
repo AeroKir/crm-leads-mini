@@ -48,6 +48,7 @@ export function useLeads () {
     loadLeads: store.loadLeads,
     updateLeadStatus: store.updateLeadStatus,
     addNote: store.addNote,
+    updateManyLeadsStatus: store.updateManyLeadsStatus,
     resetFilters,
   }
 }

@@ -1,6 +1,41 @@
 <template>
   <v-card elevation="2">
+    <div
+      v-if="selectedIds.length > 0"
+      class="d-flex align-center ga-3 pa-4 border-b"
+    >
+      <div class="text-body-2 font-weight-medium">
+        Selected: {{ selectedIds.length }}
+      </div>
+
+      <v-select
+        v-model="bulkStatus"
+        density="compact"
+        hide-details
+        :items="statuses"
+        label="Change status"
+        style="max-width: 220px;"
+      />
+
+      <v-btn
+        color="primary"
+        :disabled="!bulkStatus"
+        :loading="isLoading"
+        @click="applyBulkStatus"
+      >
+        Apply
+      </v-btn>
+
+      <v-btn
+        variant="text"
+        @click="clearSelection"
+      >
+        Clear
+      </v-btn>
+    </div>
+
     <v-data-table
+      v-model="selectedIds"
       v-model:items-per-page="itemsPerPage"
       v-model:page="page"
       v-model:sort-by="sortBy"
@@ -11,6 +46,8 @@
       :items="filteredLeads"
       :items-per-page-options="[10, 20, 50]"
       :loading="isLoading"
+      must-sort
+      show-select
       @click:row="onRowClick"
     >
       <template #item.fullName="{ item }">
@@ -52,8 +89,8 @@
 </template>
 
 <script setup lang="ts">
-  import type { Lead } from '@/types/lead'
-  import { computed } from 'vue'
+  import type { Lead, LeadStatus } from '@/types/lead'
+  import { computed, ref, watch } from 'vue'
   import { useRouter } from 'vue-router'
   import { useLeads } from '@/composables/useLeads'
 
@@ -68,7 +105,9 @@
     filteredLeads,
     pagination,
     sort,
+    statuses,
     isLoading,
+    updateManyLeadsStatus,
   } = useLeads()
 
   const headers = [
@@ -80,6 +119,9 @@
     { title: 'Created at', key: 'createdAt', sortable: true },
     { title: 'Budget', key: 'budget', sortable: true },
   ]
+
+  const selectedIds = ref<string[]>([])
+  const bulkStatus = ref<LeadStatus | null>(null)
 
   const page = computed({
     get: () => pagination.value.page,
@@ -118,7 +160,36 @@
     },
   })
 
-  function onRowClick (_: Event, row: { item: Lead }) {
+  watch(
+    filteredLeads,
+    items => {
+      const currentIds = new Set(items.map(item => item.id))
+      selectedIds.value = selectedIds.value.filter(id => currentIds.has(id))
+    },
+    { deep: true },
+  )
+
+  async function applyBulkStatus () {
+    if (!bulkStatus.value || selectedIds.value.length === 0) return
+
+    await updateManyLeadsStatus(selectedIds.value, bulkStatus.value)
+
+    bulkStatus.value = null
+    selectedIds.value = []
+  }
+
+  function clearSelection () {
+    selectedIds.value = []
+    bulkStatus.value = null
+  }
+
+  function onRowClick (event: Event, row: { item: Lead }) {
+    const target = event.target as HTMLElement | null
+
+    if (target?.closest('.v-selection-control')) {
+      return
+    }
+
     router.push(`/leads/${row.item.id}`)
   }
 
