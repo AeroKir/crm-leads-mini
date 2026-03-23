@@ -119,6 +119,14 @@ export const useLeadsStore = defineStore('leads', {
       this.leads = leadsData as Lead[]
     },
 
+    createLead (lead: Lead) {
+      this.leads.unshift(lead)
+
+      if (!this.notesByLeadId[lead.id]) {
+        this.notesByLeadId[lead.id] = []
+      }
+    },
+
     getLeadById (id: string) {
       return this.leads.find(lead => lead.id === id) || null
     },

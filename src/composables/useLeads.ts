@@ -55,6 +55,7 @@ export function useLeads () {
     updateLeadStatus: store.updateLeadStatus,
     updateManyLeadsStatus: store.updateManyLeadsStatus,
     addNote: store.addNote,
+    createLead: store.createLead,
     resetFilters,
   }
 }

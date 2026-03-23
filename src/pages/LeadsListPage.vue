@@ -1,9 +1,12 @@
 <template>
   <div class="pa-4">
-    <h1 class="text-h4 mb-4">
-      Leads
-    </h1>
+    <div class="d-flex justify-space-between align-center mb-4">
+      <h1 class="text-h4">
+        Leads
+      </h1>
 
+      <LeadCreateDialog />
+    </div>
     <LeadsFilters />
 
     <LeadsTable
@@ -17,6 +20,7 @@
   import type { Lead, LeadStatus } from '@/types/lead'
   import { watch } from 'vue'
   import { useRoute, useRouter } from 'vue-router'
+  import LeadCreateDialog from '@/components/leads/LeadCreateDialog.vue'
   import LeadsFilters from '@/components/leads/LeadsFilters.vue'
   import LeadsTable from '@/components/leads/LeadsTable.vue'
   import { useLeads } from '@/composables/useLeads'
