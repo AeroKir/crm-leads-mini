@@ -1,82 +1,157 @@
-# crm-leads-mini
+# CRM Leads Mini (MVP)
 
-Scaffolded with Vuetify CLI.
+Міні CRM-модуль для роботи з лідами, реалізований як тестове завдання на Vue 3.
 
-## ❗️ Documentation
+## 🧩 Стек
 
-- Primary docs: https://vuetifyjs.com/
-- Getting started guide: https://vuetifyjs.com/en/getting-started/installation/
-- Community support: https://community.vuetifyjs.com/
-- Issue tracker: https://issues.vuetifyjs.com/
-
-## 🧱 Stack
-
-- Framework: Vue 3 + Vite
-- UI Library: Vuetify
-- Language: TypeScript
-- Package manager: npm
-
-## 🧭 Start Here
-
-- Main entry: `src/main.ts`
-- Main app component: `src/App.vue`
-- Main styles: `src/styles/`
-- Plugin setup: `src/plugins/`
-
-## 📁 Project Structure
-
-- `src/main.ts` — application entry point
-- `src/App.vue` — root component
-- `src/components/` — reusable Vue components
-- `src/plugins/` — plugin registration and setup
-- `src/styles/` — global styles and theme settings
-- `public/` — static public files
-
-## ✨ Enabled Features
-
-- ESLint
-- Vuetify MCP
+- Vue 3 (Composition API)
+- TypeScript
+- Vite
+- Vuetify
 - Pinia
 - Vue Router
 
-## 💿 Install
+---
 
-Use your selected package manager (npm) to install dependencies:
+## 🚀 Функціонал
+
+### Список лідів (`/leads`)
+- таблиця лідів
+- пошук (debounce 300ms)
+- фільтри:
+  - статус (multi-select)
+  - owner
+  - source
+  - createdAt (від / до)
+- сортування по колонках
+- пагінація (10 / 20 / 50)
+- bulk action (масова зміна статусу)
+- клік по рядку → сторінка деталей
+
+### Деталі ліда (`/leads/:id`)
+- повна інформація по ліду
+- зміна статусу
+- нотатки / активність
+- додавання нотатки
+- оновлення `lastActivityAt`
+- обробка `Lead not found`
+
+### Додатково
+- створення ліда (діалог)
+- валідація:
+  - телефон
+  - порожня нотатка
+- loading overlay при збереженні (імітація API)
+
+---
+
+## 🔗 Query params
+
+Стан списку синхронізується з URL:
+
+- `search`
+- `status`
+- `owner`
+- `page`
+- `sort`
+
+Додатково:
+- `source`
+- `createdFrom`
+- `createdTo`
+- `perPage`
+
+👉 При відкритті посилання стан списку повністю відновлюється.
+
+---
+
+## 📊 Data generation
+
+Дані згенеровані через кастомний генератор для імітації реального середовища.
 
 ```bash
-npm install
+npm run generate:leads
+````
+
+Попередньо згенерований JSON вже включений у проєкт.
+
+---
+
+## 📁 Структура
+
+```bash
+src/
+ ├── components/leads/
+ │   ├── LeadCreateDialog.vue
+ │   ├── LeadsFilters.vue
+ │   └── LeadsTable.vue
+ ├── composables/
+ │   ├── useCreateLeadDialog.ts
+ │   ├── useLeadDetails.ts
+ │   ├── useLeads.ts
+ │   ├── useLeadsListPage.ts
+ │   └── useDebounce.ts
+ ├── data/
+ │   └── leads.json
+ ├── pages/
+ │   ├── LeadsListPage.vue
+ │   └── LeadDetailsPage.vue
+ ├── stores/
+ │   └── useLeadsStore.ts
+ ├── types/
+ │   └── lead.ts
+ └── utils/
+     └── generateLeads.ts
+
+scripts/
+ └── generate.ts
 ```
 
-## 🚀 Quick Start
+---
+
+## 🧠 Архітектура
+
+* **Pinia store** — єдине джерело стану:
+
+  * leads
+  * filters
+  * search
+  * sort
+  * pagination
+  * notes
+
+* **Composables** — винесення бізнес-логіки з компонентів:
+
+  * `useLeads` — доступ до store
+  * `useLeadsListPage` — логіка списку + query params
+  * `useLeadDetails` — логіка сторінки деталей
+  * `useCreateLeadDialog` — форма створення ліда
+
+* **Query params як state**
+  URL повністю відображає стан таблиці
+
+* **Локальні дані**
+  Робота без бекенду через JSON + генератор
+
+👉 Компоненти залишаються максимально “тупими” (UI only)
+
+---
+
+## ⚙️ Запуск
 
 ```bash
 npm install
 npm run dev
 ```
 
-## 🏗️ Build
+(опціонально)
 
 ```bash
-npm run build
+npm run generate:leads
 ```
 
-## 🧪 Available Scripts
+---
 
-- `npm run dev`
-- `npm run build`
-- `npm run preview`
-- `npm run build-only`
-- `npm run type-check`
-- `npm run lint`
-- `npm run lint:fix`
-- `npm run mcp`
-- `npm run mcp:revert`
+## 📌 Примітка
 
-## 💪 Support Vuetify Development
-
-This project uses Vuetify - an MIT licensed Open Source project. We are glad to welcome contributors and any support for ongoing development:
-
-- Contribute to Vuetify and ecosystem projects: https://github.com/vuetifyjs
-- Request enterprise support: https://support.vuetifyjs.com/
-- Sponsor on GitHub: https://github.com/sponsors/vuetifyjs
-- Support on Open Collective: https://opencollective.com/vuetify
+Проєкт реалізовано без бекенду. Всі дані обробляються локально з імітацією асинхронних операцій.
